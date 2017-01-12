@@ -41,16 +41,13 @@ how.many.items <- lapply(meals, length)
 
 # Write a function that adds pizza to every meal
 
+
+# Why isn't my code appending "pizza" to every list? 
+# Isn't list.of.meals referencing what's passed in, i.e. meals?
+# Do I have to reutn it and assign it to meals?
 add.pizza.to.every.meal <- function(list.of.meals){
-  return (list.of.meals <- lapply(list.of.meals, append, "pizza"))
+  list.of.meals <- c(list.of.meals, 'pizza')
 }
 
 # Add pizza to every meal!
-
-add.pizza.to.every.meal(meals)
-print(meals)
-
-
-
-
-
+meals <- lapply(meals, add.pizza.to.every.meal)
